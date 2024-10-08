@@ -6,31 +6,31 @@
     <ul>
       <li>
         <router-link to="{ name: 'Inbox' }">
-          <i class="fa fa-inbox" aria-hidden="true"></i>
+          <font-awesome-icon icon="inbox" />
           Inbox
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Starred' }">
-          <i class="fa fa-star" aria-hidden="true"></i>
+          <font-awesome-icon icon="star" />
           Starred
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Snoozed' }">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <font-awesome-icon icon="clock" />
           Snoozed
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Sent' }">
-          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          <font-awesome-icon icon="plane" />
           Sent
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Drafts' }">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
+          <font-awesome-icon icon="pencil" />
           Drafts
         </router-link>
       </li>
@@ -57,8 +57,11 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
 export default {
   emits: ['show-modal'],
+  components: { FontAwesomeIcon },
 };
 </script>
 

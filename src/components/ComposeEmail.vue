@@ -9,7 +9,8 @@
         <div class="modal-body">
           <div class="form-group">
             <label>To:</label>
-            <input type="text" v-model="to" class="form-control" placeholder="Enter email addresses separated by commas" />
+            <input type="text" v-model="to" class="form-control"
+              placeholder="Enter email addresses separated by commas" />
           </div>
           <div class="form-group">
             <label>Subject:</label>
@@ -69,16 +70,18 @@ export default {
 <style scoped>
 .modal {
   position: fixed;
-  top: 80px; 
-  left: 30%; 
-  width: 70%; 
-  height: calc(100vh - 80px); /* Adjusted to take up the full height of the viewport minus the navbar height */
+  top: 80px;
+  left: 30%;
+  width: 70%;
+  height: calc(100vh - 80px);
+  /* Adjusted to take up the full height of the viewport minus the navbar height */
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  overflow-y: auto; /* Added to make the modal window scrollable */
+  overflow-y: auto;
+  /* Added to make the modal window scrollable */
 }
 
 .modal-content {

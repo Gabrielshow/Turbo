@@ -1,7 +1,7 @@
 <template>
-    <EmailSettings />
+    <EmailSetting />
 </template>
 
 <script>
-import EmailSettings from '@/components/EmailSettings.vue';
+import EmailSetting from '@/components/EmailSetting.vue';
 </script>
