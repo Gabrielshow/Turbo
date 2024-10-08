@@ -6,49 +6,49 @@
     <ul>
       <li>
         <router-link to="{ name: 'Inbox' }">
-          <font-awesome-icon icon="inbox" />
+          <font-awesome-icon icon="['fas', 'inbox']" />
           Inbox
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Starred' }">
-          <font-awesome-icon icon="star" />
+          <font-awesome-icon icon="['fas', 'star']" />
           Starred
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Snoozed' }">
-          <font-awesome-icon icon="clock" />
+          <font-awesome-icon icon="['fas', 'clock']" />
           Snoozed
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Sent' }">
-          <font-awesome-icon icon="plane" />
+          <font-awesome-icon icon="['fas', 'paper-plane']" />
           Sent
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Drafts' }">
-          <font-awesome-icon icon="pencil" />
+          <font-awesome-icon icon="['fas', 'pencil-alt']" />
           Drafts
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Chats' }">
-          <i class="fa fa-comment" aria-hidden="true"></i>
+          <font-awesome-icon icon="['fas', 'comment']" />
           Chats
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Spam' }">
-          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          <font-awesome-icon :icon="['fas', 'exclamation-circle']" />
           Spam
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Trash' }">
-          <i class="fa fa-trash" aria-hidden="true"></i>
+          <font-awesome-icon :icon="['fas', 'trash']" />
           Trash
         </router-link>
       </li>
@@ -58,10 +58,25 @@
 
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faInbox, faStar, faClock, faPaperPlane, faPencilAlt, faComment, faExclamationCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   emits: ['show-modal'],
   components: { FontAwesomeIcon },
+  computed: {
+    icons() {
+      return {
+        inbox: faInbox,
+        star: faStar,
+        clock: faClock,
+        paperPlane: faPaperPlane,
+        pencilAlt: faPencilAlt,
+        comment: faComment,
+        exclamationCircle: faExclamationCircle,
+        trash: faTrash,
+      };
+    },
+  },
 };
 </script>
 

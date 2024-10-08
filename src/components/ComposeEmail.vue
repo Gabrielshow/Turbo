@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1>Compose Email</h1>
-        <button @click="$emit('close')">Close</button>
+        <button @click="$emit('close')">X</button>
       </div>
       <form @submit.prevent="sendEmail">
         <div class="modal-body">
@@ -11,14 +11,17 @@
             <label>To:</label>
             <input type="text" v-model="to" class="form-control"
               placeholder="Enter email addresses separated by commas" />
+            <small class="text-danger" v-if="errors.to">{{ errors.to }}</small>
           </div>
           <div class="form-group">
             <label>Subject:</label>
             <input type="text" v-model="subject" class="form-control" />
+            <small class="text-danger" v-if="errors.subject">{{ errors.subject }}</small>
           </div>
           <div class="form-group">
             <label>Body:</label>
             <textarea v-model="body" class="form-control" rows="15"></textarea>
+            <small class="text-danger" v-if="errors.body">{{ errors.body }}</small>
           </div>
         </div>
         <div class="modal-footer">
@@ -31,6 +34,7 @@
 
 <script>
 import axios from 'axios';
+// import { validateEmail } from '../utils/validation';
 
 export default {
   props: {
@@ -44,17 +48,56 @@ export default {
       to: "",
       subject: "",
       body: "",
+      errors: {
+        to: "",
+        subject: "",
+        body: "",
+      },
     };
   },
   methods: {
+    validateEmail(email) {
+      const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return re.test(email);
+    },
     sendEmail() {
+      this.errors = {
+        to: "",
+        subject: "",
+        body: "",
+      };
+
       const toEmails = this.to.split(",");
       const emails = toEmails.map(email => email.trim());
+
+      if (emails.length === 0) {
+        this.errors.to = "Please enter at least one email address.";
+        return;
+      }
+
+      for (const email of emails) {
+        if (!this.validateEmail(email)) {
+          this.errors.to = "Please enter valid email addresses separated by commas.";
+          return;
+        }
+      }
+
+      if (this.subject.length === 0) {
+        this.errors.subject = "Please enter a subject.";
+        return;
+      }
+
+      if (this.body.length === 0) {
+        this.errors.body = "Please enter a message.";
+        return;
+      }
+
       const mail = {
         to: emails,
         subject: this.subject,
         body: this.body,
       };
+
       axios.post('https://turbo-backend-58if.onrender.com/send-email', mail)
         .then((response) => {
           console.log(response.data);
@@ -78,7 +121,7 @@ export default {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px rgba(44, 88, 99, 0.2);
   z-index: 1000;
   overflow-y: auto;
   /* Added to make the modal window scrollable */
@@ -129,11 +172,15 @@ export default {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-shadow: none;
+  /* outline: none; */
+  transition: all 2s ease-in;
+
 }
 
 .form-control:focus {
   border-color: #aaa;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px rgba(58, 155, 123);
 }
 
 .modal-footer {
@@ -157,5 +204,9 @@ export default {
 .btn-primary {
   background-color: #4CAF50;
   color: #fff;
+}
+
+.text-danger {
+  color: red;
 }
 </style>
