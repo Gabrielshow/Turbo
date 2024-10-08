@@ -9,7 +9,7 @@
         <div class="modal-body">
           <div class="form-group">
             <label>To:</label>
-            <input type="email" v-model="to" class="form-control" />
+            <input type="text" v-model="to" class="form-control" placeholder="Enter email addresses separated by commas" />
           </div>
           <div class="form-group">
             <label>Subject:</label>
@@ -47,8 +47,10 @@ export default {
   },
   methods: {
     sendEmail() {
+      const toEmails = this.to.split(",");
+      const emails = toEmails.map(email => email.trim());
       const mail = {
-        to: this.to,
+        to: emails,
         subject: this.subject,
         body: this.body,
       };

@@ -12,6 +12,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .logo h1:hover {

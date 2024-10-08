@@ -10,17 +10,49 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/email',
-      name: 'EmailList',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views//EmailView.vue')
+      path: '/settings',
+      name: 'Settings',
+      component: () => import('../views/Settings.vue')
     },
     {
-      path: '/settings',
-      name: 'EmailSettings',
-      component: () => import('../views/EmailSettingsView.vue')
+      path: '/inbox',
+      name: 'Inbox',
+      component: () => import('@/views/Inbox.vue')
+    },
+    {
+      path: '/starred',
+      name: 'Starred',
+      component: () => import('@/views/Starred.vue')
+    },
+    {
+      path: '/snoozed',
+      name: 'Snoozed',
+      component: () => import('@/views/Snoozed.vue')
+    },
+    {
+      path: '/sent',
+      name: 'Sent',
+      component: () => import('@/views/Sent.vue')
+    },
+    {
+      path: '/drafts',
+      name: 'Drafts',
+      component: () => import('@/views/Drafts.vue')
+    },
+    {
+      path: '/chats',
+      name: 'Chats',
+      component: () => import('@/views/Chats.vue')
+    },
+    {
+      path: '/spam',
+      name: 'Spam',
+      component: () => import('@/views/Spam.vue')
+    },
+    {
+      path: '/trash',
+      name: 'Trash',
+      component: () => import('@/views/Trash.vue')
     }
   ]
 })

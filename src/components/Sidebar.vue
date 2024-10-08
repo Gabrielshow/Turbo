@@ -64,11 +64,12 @@ export default {
 
 <style scoped>
 .sidebar {
+  position: fixed;
   left: 0;
   width: 30%;
   height: 100vh;
   background-color: #f0f0f0;
-  padding: 20px;
+  /* padding: 20px; */
   border-right: 1px solid #ccc;
 }
 
