@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-const query = ref("");
+// import { ref } from 'vue';
+// const query = ref("");
 
 </script>
 

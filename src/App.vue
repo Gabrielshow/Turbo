@@ -3,9 +3,21 @@
     <AppLogo />
     <!-- <AppNavbar /> -->
   </div>
-
+  <Sidebar @show-modal="showModal = true" />
   <router-view />
+  <ComposeEmail v-if="showModal" @close="showModal = false" />
 </template>
+
+<script setup>
+// import AppNavbar from '@/components/AppNavbar.vue'
+import AppLogo from '@/components/AppLogo.vue'
+import Sidebar from '@/components/Sidebar.vue'
+import ComposeEmail from '@/components/ComposeEmail.vue'
+
+import { ref } from 'vue'
+
+const showModal = ref(false)
+</script>
 
 <style scoped>
 .main {
@@ -21,10 +33,3 @@
   /* border-left: 5px solid Purple; */
 }
 </style>
-
-<script setup>
-// import AppNavbar from '@/components/AppNavbar.vue'
-import AppLogo from '@/components/AppLogo.vue'
-// import AppHome from '@/components/AppHome.vue'
-// import AppCard from '@/components/AppCard.vue'
-</script>
