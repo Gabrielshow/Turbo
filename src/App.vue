@@ -5,7 +5,7 @@
   </div>
   <Sidebar @show-modal="showModal = true" />
   <router-view />
-  <ComposeEmail v-if="showModal" @close="showModal = false" />
+  <ComposeEmail v-if="showModal" :show="showModal" @close="showModal = false" />
 </template>
 
 <script setup>
