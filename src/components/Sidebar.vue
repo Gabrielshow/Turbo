@@ -6,49 +6,49 @@
     <ul>
       <li>
         <router-link to="{ name: 'Inbox' }">
-          <font-awesome-icon icon="['fas', 'inbox']" />
+          <font-awesome-icon icon="fas fa-inbox" />
           Inbox
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Starred' }">
-          <font-awesome-icon icon="['fas', 'star']" />
+          <font-awesome-icon icon="fas fa-star" />
           Starred
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Snoozed' }">
-          <font-awesome-icon icon="['fas', 'clock']" />
+          <font-awesome-icon icon="fas fa-clock" />
           Snoozed
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Sent' }">
-          <font-awesome-icon icon="['fas', 'paper-plane']" />
+          <font-awesome-icon icon="fas fa-paper-plane" />
           Sent
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Drafts' }">
-          <font-awesome-icon icon="['fas', 'pencil-alt']" />
+          <font-awesome-icon icon="fas fa-pencil-alt" />
           Drafts
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Chats' }">
-          <font-awesome-icon icon="['fas', 'comment']" />
+          <font-awesome-icon icon="fas fa-comment" />
           Chats
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Spam' }">
-          <font-awesome-icon :icon="['fas', 'exclamation-circle']" />
+          <font-awesome-icon icon="fas fa-exclamation-circle" />
           Spam
         </router-link>
       </li>
       <li>
         <router-link to="{ name: 'Trash' }">
-          <font-awesome-icon :icon="['fas', 'trash']" />
+          <font-awesome-icon icon="fas fa-trash" />
           Trash
         </router-link>
       </li>
@@ -58,25 +58,10 @@
 
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faInbox, faStar, faClock, faPaperPlane, faPencilAlt, faComment, faExclamationCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   emits: ['show-modal'],
   components: { FontAwesomeIcon },
-  computed: {
-    icons() {
-      return {
-        inbox: faInbox,
-        star: faStar,
-        clock: faClock,
-        paperPlane: faPaperPlane,
-        pencilAlt: faPencilAlt,
-        comment: faComment,
-        exclamationCircle: faExclamationCircle,
-        trash: faTrash,
-      };
-    },
-  },
 };
 </script>
 
