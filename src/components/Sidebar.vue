@@ -5,49 +5,49 @@
     </button>
     <ul>
       <li>
-        <router-link to="{ name: 'Inbox' }">
+        <router-link :to="{ name: 'Inbox' }">
           <font-awesome-icon icon="fas fa-inbox" />
           Inbox
         </router-link>
       </li>
       <li>
-        <router-link to="{ name: 'Starred' }">
+        <router-link :to="{ name: 'Starred' }">
           <font-awesome-icon icon="fas fa-star" />
           Starred
         </router-link>
       </li>
       <li>
-        <router-link to="{ name: 'Snoozed' }">
+        <router-link :to="{ name: 'Snoozed' }">
           <font-awesome-icon icon="fas fa-clock" />
           Snoozed
         </router-link>
       </li>
       <li>
-        <router-link to="{ name: 'Sent' }">
+        <router-link :to="{ name: 'Sent' }">
           <font-awesome-icon icon="fas fa-paper-plane" />
           Sent
         </router-link>
       </li>
       <li>
-        <router-link to="{ name: 'Drafts' }">
+        <router-link :to="{ name: 'Drafts' }">
           <font-awesome-icon icon="fas fa-pencil-alt" />
           Drafts
         </router-link>
       </li>
       <li>
-        <router-link to="{ name: 'Chats' }">
+        <router-link :to="{ name: 'Chats' }">
           <font-awesome-icon icon="fas fa-comment" />
           Chats
         </router-link>
       </li>
       <li>
-        <router-link to="{ name: 'Spam' }">
+        <router-link :to="{ name: 'Spam' }">
           <font-awesome-icon icon="fas fa-exclamation-circle" />
           Spam
         </router-link>
       </li>
       <li>
-        <router-link to="{ name: 'Trash' }">
+        <router-link :to="{ name: 'Trash' }">
           <font-awesome-icon icon="fas fa-trash" />
           Trash
         </router-link>

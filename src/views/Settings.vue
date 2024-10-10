@@ -1,5 +1,5 @@
 <template>
-    <EmailSetting />
+    <email-setting />
 </template>
 
 <script>

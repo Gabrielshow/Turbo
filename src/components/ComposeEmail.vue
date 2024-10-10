@@ -98,15 +98,18 @@ export default {
         body: this.body,
       };
 
-      axios.post('https://turbo-backend-58if.onrender.com/send-email', mail)
+      axios.post('http://localhost:3000/api/send-email', mail)
         .then((response) => {
           console.log(response.data);
+          this.$emit('close-modal');
+          alert('Email sent successfully!');
         })
         .catch((error) => {
           console.error(error);
+          alert('Error sending email: ' + error.message);
         });
     },
-  },
+  }
 };
 </script>
 
