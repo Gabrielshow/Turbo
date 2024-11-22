@@ -11,7 +11,7 @@
 <script setup>
 // import AppNavbar from '@/components/AppNavbar.vue'
 import AppLogo from '@/components/AppLogo.vue'
-import Sidebar from '@/components/Sidebar.vue'
+import Sidebar from '@/components/SideBar.vue'
 import ComposeEmail from '@/components/ComposeEmail.vue'
 
 import { ref } from 'vue'
