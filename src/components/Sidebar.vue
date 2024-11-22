@@ -6,49 +6,47 @@
     <ul>
       <li>
         <router-link :to="{ name: 'Inbox' }">
-          <font-awesome-icon icon="fas fa-inbox" />
+          <!-- <font-awesome-icon icon="fas fa-inbox" /> -->
           Inbox
         </router-link>
       </li>
       <li>
         <router-link :to="{ name: 'Starred' }">
-          <font-awesome-icon icon="fas fa-star" />
+          <!-- <font-awesome-icon icon="fas fa-star" /> -->
           Starred
         </router-link>
       </li>
       <li>
         <router-link :to="{ name: 'Snoozed' }">
-          <font-awesome-icon icon="fas fa-clock" />
+          <!-- <font-awesome-icon icon="fas fa-clock" /> -->
           Snoozed
         </router-link>
       </li>
       <li>
         <router-link :to="{ name: 'Sent' }">
-          <font-awesome-icon icon="fas fa-paper-plane" />
+          <!-- <font-awesome-icon icon="fas fa-paper-plane" /> -->
           Sent
         </router-link>
       </li>
       <li>
         <router-link :to="{ name: 'Drafts' }">
-          <font-awesome-icon icon="fas fa-pencil-alt" />
           Drafts
         </router-link>
       </li>
       <li>
         <router-link :to="{ name: 'Chats' }">
-          <font-awesome-icon icon="fas fa-comment" />
           Chats
         </router-link>
       </li>
       <li>
         <router-link :to="{ name: 'Spam' }">
-          <font-awesome-icon icon="fas fa-exclamation-circle" />
+          <!-- <font-awesome-icon icon="fas fa-exclamation-circle" /> -->
           Spam
         </router-link>
       </li>
       <li>
         <router-link :to="{ name: 'Trash' }">
-          <font-awesome-icon icon="fas fa-trash" />
+          <!-- <font-awesome-icon icon="fas fa-trash" /> -->
           Trash
         </router-link>
       </li>
@@ -57,11 +55,10 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
   emits: ['show-modal'],
-  components: { FontAwesomeIcon },
 };
 </script>
 
@@ -69,10 +66,10 @@ export default {
 .sidebar {
   position: fixed;
   left: 0;
-  width: 30%;
+  width: 20%;
   height: 100vh;
   background-color: #f0f0f0;
-  /* padding: 20px; */
+  padding-top: 10px;
   border-right: 1px solid #ccc;
 }
 
