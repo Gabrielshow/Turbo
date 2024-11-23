@@ -72,23 +72,42 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 
 }
 
-button.group {
+.group input {
+    height: 40px;
+    width: 300px;
+    border-radius: 12px;
+    /* border: 1px solid linear-gradient(#434, #302, #908); */
     outline: none;
-    border: 1px solid linear-gradient(#434, #302, #908);
-    border-radius: 2px;
+    padding: 10px;
+    border: none;
+    transition: all 0.3s ease-in;
+}
+
+.group input:focus {
+    outline: none;
+    border: 1px solid #007bff;
+    box-shadow: 0 0 0 2px #007bff;
+    border-radius: 4px;
+}
+
+.group button {
+    outline: none;
+    border: none;
+    /* border: 1px solid linear-gradient(#434, #302, #908); */
+    border-radius: 12px;
     cursor: pointer;
     height: 40px;
-    width: 20px;
+    width: 70px;
+    background: turquoise;
+    transition: all 0.3s ease-in;
 }
 
-button.group:hover {
+.group button:hover {
     transform: scale(1.1);
 }
 
-button.group.login {
-    background: turquoise;
-}
 </style>

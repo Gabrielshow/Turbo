@@ -80,12 +80,14 @@ export default {
   background: turquoise;
   box-shadow: 2px 2px 2px 1px grey;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 10px;
   outline: none;
   border: none;
   color: linear-gradient(to right, #489, #781, #201);
-  height: 20px;
+  height: 25px;
   transition: all 0.3s ease-in;
+  width: 70px;
+
 }
 
 .compose:hover {

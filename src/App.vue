@@ -3,7 +3,10 @@
     <AppNavbar />
   </div>
   <Sidebar @show-modal="showModal = true" />
-  <router-view />
+  <div class="inview">
+
+    <router-view />
+  </div>
   <ComposeEmail v-if="showModal" :show="showModal" @close="showModal = false" />
 </template>
 
@@ -25,5 +28,11 @@ const showModal = ref(false)
   background: linear-gradient(to right, white, grey);
   height: 80px;
   /* border-left: 5px solid Purple; */
+}
+
+.inview {
+  height: calc(100vh - 80px);
+  width: 80%;
+  border-radius: 12px;
 }
 </style>
