@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 // import { validateEmail } from '../utils/validation';
 
 export default {
@@ -92,25 +92,33 @@ export default {
         return;
       }
 
-      const mail = {
-        to: emails,
-        subject: this.subject,
-        body: this.body,
-      };
+      if (window.Email) {
+      window.Email.send({
+      Host : "smtp.elasticemail.com",
+      Username: "everythinggrand24@gmail.com",
+      Password: "00A41F02DD997CCE5819B23FFA54533C9C95",
+      To : this.to,
+      From : "everythinggrand24@gmail.com",
+      Subject : this.subject, 
+      Body : this.body
+      }).then(
+        message => alert(message)
+      );  
+      this.$emit('close-modal');
+      }
 
-      axios.post('http://localhost:3000/api/send-email', mail)
-        .then((response) => {
-          console.log(response.data);
-          this.$emit('close-modal');
-          alert('Email sent successfully!');
-        })
-        .catch((error) => {
-          console.error(error);
-          alert('Error sending email: ' + error.message);
-        });
+      // axios.post('http://localhost:8000/api/send-email', mail)
+      //   .then((response) => {
+      //     console.log(response.data);
+      //     this.$emit('close-modal');
+      //     alert('Email sent successfully!');
+      //   })
+      //   .catch((error) => {
+      //     console.error(error);
+      //     alert('Error sending email: ' + error.message);
+      //   });
     },
-  }
-};
+}};
 </script>
 
 <style scoped>
